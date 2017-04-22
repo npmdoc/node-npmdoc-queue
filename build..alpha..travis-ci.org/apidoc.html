@@ -1,0 +1,826 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jessetane/queue#readme"
+
+    >queue (v4.2.1)</a>
+</h1>
+<h4>asynchronous function queue with adjustable concurrency</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.queue">module queue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.queue">
+            function <span class="apidocSignatureSpan"></span>queue
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index">
+            function <span class="apidocSignatureSpan">queue.</span>index
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.super_">
+            function <span class="apidocSignatureSpan">queue.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">queue.</span>index.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.queue.index">module queue.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.index">
+            function <span class="apidocSignatureSpan">queue.</span>index
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.super_">
+            function <span class="apidocSignatureSpan">queue.index.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.queue.index.prototype">module queue.index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.end">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>end
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.indexOf">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.lastIndexOf">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>lastIndexOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.pop">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>pop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.push">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>push
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.reverse">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>reverse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.shift">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>shift
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.slice">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>slice
+            <span class="apidocSignatureSpan">(begin, end)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.splice">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>splice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.start">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>start
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.stop">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.queue.index.prototype.unshift">
+            function <span class="apidocSignatureSpan">queue.index.prototype.</span>unshift
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.queue" id="apidoc.module.queue">module queue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.queue.queue" id="apidoc.element.queue.queue">
+        function <span class="apidocSignatureSpan"></span>queue
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(options) {
+  if (!(this instanceof Queue)) {
+    return new Queue(options)
+  }
+
+  EventEmitter.call(this)
+  options = options || {}
+  this.concurrency = options.concurrency || Infinity
+  this.timeout = options.timeout || 0
+  this.autostart = options.autostart || false
+  this.pending = 0
+  this.session = 0
+  this.running = false
+  this.jobs = []
+  this.timers = {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index" id="apidoc.element.queue.index">
+        function <span class="apidocSignatureSpan">queue.</span>index
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(options) {
+  if (!(this instanceof Queue)) {
+    return new Queue(options)
+  }
+
+  EventEmitter.call(this)
+  options = options || {}
+  this.concurrency = options.concurrency || Infinity
+  this.timeout = options.timeout || 0
+  this.autostart = options.autostart || false
+  this.pending = 0
+  this.session = 0
+  this.running = false
+  this.jobs = []
+  this.timers = {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.super_" id="apidoc.element.queue.super_">
+        function <span class="apidocSignatureSpan">queue.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.queue.index" id="apidoc.module.queue.index">module queue.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.index" id="apidoc.element.queue.index.index">
+        function <span class="apidocSignatureSpan">queue.</span>index
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(options) {
+  if (!(this instanceof Queue)) {
+    return new Queue(options)
+  }
+
+  EventEmitter.call(this)
+  options = options || {}
+  this.concurrency = options.concurrency || Infinity
+  this.timeout = options.timeout || 0
+  this.autostart = options.autostart || false
+  this.pending = 0
+  this.session = 0
+  this.running = false
+  this.jobs = []
+  this.timers = {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.super_" id="apidoc.element.queue.index.super_">
+        function <span class="apidocSignatureSpan">queue.index.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.queue.index.prototype" id="apidoc.module.queue.index.prototype">module queue.index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.end" id="apidoc.element.queue.index.prototype.end">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>end
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (err) {
+  clearTimers.call(this)
+  this.jobs.length = 0
+  this.pending = 0
+  done.call(this, err)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function callOnErrorOrEnd (cb) {
+  var self = this
+  this.on(&#x27;error&#x27;, onerror)
+  this.on(&#x27;end&#x27;, onend)
+
+  function onerror (err) { self.<span class="apidocCodeKeywordSpan">end</span>(err) }
+  function onend (err) {
+    self.removeListener(&#x27;error&#x27;, onerror)
+    self.removeListener(&#x27;end&#x27;, onend)
+    cb(err)
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.indexOf" id="apidoc.element.queue.index.prototype.indexOf">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function () {
+  return Array.prototype[method].apply(this.jobs, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### `q.push(element1, ..., elementN)`
+#### `q.unshift(element1, ..., elementN)`
+#### `q.splice(index , howMany[, element1[, ...[, elementN]]])`
+#### `q.pop()`
+#### `q.shift()`
+#### `q.slice(begin[, end])`
+#### `q.reverse()`
+#### `q.<span class="apidocCodeKeywordSpan">indexOf</span>(searchElement[, fromIndex])`
+#### `q.lastIndexOf(searchElement[, fromIndex])`
+
+## Properties
+#### `q.concurrency`
+Max number of jobs the queue should process concurrently, defaults to `Infinity`.
+
+#### `q.timeout`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.lastIndexOf" id="apidoc.element.queue.index.prototype.lastIndexOf">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>lastIndexOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lastIndexOf = function () {
+  return Array.prototype[method].apply(this.jobs, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### `q.unshift(element1, ..., elementN)`
+#### `q.splice(index , howMany[, element1[, ...[, elementN]]])`
+#### `q.pop()`
+#### `q.shift()`
+#### `q.slice(begin[, end])`
+#### `q.reverse()`
+#### `q.indexOf(searchElement[, fromIndex])`
+#### `q.<span class="apidocCodeKeywordSpan">lastIndexOf</span>(searchElement[, fromIndex])`
+
+## Properties
+#### `q.concurrency`
+Max number of jobs the queue should process concurrently, defaults to `Infinity`.
+
+#### `q.timeout`
+Milliseconds to wait for a job to execute its callback.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.pop" id="apidoc.element.queue.index.prototype.pop">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>pop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pop = function () {
+  return Array.prototype[method].apply(this.jobs, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Stop and empty the queue immediately.
+
+## Instance methods mixed in from `Array`
+Mozilla has docs on how these methods work [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+/Array). Note that `slice` does not copy the queue.
+#### `q.push(element1, ..., elementN)`
+#### `q.unshift(element1, ..., elementN)`
+#### `q.splice(index , howMany[, element1[, ...[, elementN]]])`
+#### `q.<span class="apidocCodeKeywordSpan">pop</span>()`
+#### `q.shift()`
+#### `q.slice(begin[, end])`
+#### `q.reverse()`
+#### `q.indexOf(searchElement[, fromIndex])`
+#### `q.lastIndexOf(searchElement[, fromIndex])`
+
+## Properties
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.push" id="apidoc.element.queue.index.prototype.push">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>push
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function () {
+  var methodResult = Array.prototype[method].apply(this.jobs, arguments)
+  if (this.autostart) {
+    this.start()
+  }
+  return methodResult
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var queue = require(&#x27;queue&#x27;);
+
+var q = queue();
+var results = [];
+
+// add jobs using the Array API
+
+q.<span class="apidocCodeKeywordSpan">push</span>(function(cb) {
+results.push(&#x27;two&#x27;);
+cb();
+});
+
+q.push(
+function(cb) {
+  results.push(&#x27;four&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.reverse" id="apidoc.element.queue.index.prototype.reverse">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>reverse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reverse = function () {
+  this.jobs.reverse()
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Queue.prototype.slice = function (begin, end) {
+this.jobs = this.jobs.slice(begin, end)
+return this
+}
+
+Queue.prototype.reverse = function () {
+this.jobs.<span class="apidocCodeKeywordSpan">reverse</span>()
+return this
+}
+
+var arrayAddMethods = [
+&#x27;push&#x27;,
+&#x27;unshift&#x27;,
+&#x27;splice&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.shift" id="apidoc.element.queue.index.prototype.shift">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>shift
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shift = function () {
+  return Array.prototype[method].apply(this.jobs, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.pending === 0) {
+    done.call(this)
+  }
+  return
+}
+
+var self = this
+var job = this.jobs.<span class="apidocCodeKeywordSpan">shift</span>()
+var once = true
+var session = this.session
+var timeoutId = null
+var didTimeout = false
+
+function next (err, result) {
+  if (once &#x26;&#x26; self.session === session) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.slice" id="apidoc.element.queue.index.prototype.slice">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>slice
+        <span class="apidocSignatureSpan">(begin, end)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slice = function (begin, end) {
+  this.jobs = this.jobs.slice(begin, end)
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+arrayMethods.forEach(function (method) {
+  Queue.prototype[method] = function () {
+    return Array.prototype[method].apply(this.jobs, arguments)
+  }
+})
+
+Queue.prototype.slice = function (begin, end) {
+  this.jobs = this.jobs.<span class="apidocCodeKeywordSpan">slice</span>(begin, end)
+  return this
+}
+
+Queue.prototype.reverse = function () {
+  this.jobs.reverse()
+  return this
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.splice" id="apidoc.element.queue.index.prototype.splice">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>splice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">splice = function () {
+  var methodResult = Array.prototype[method].apply(this.jobs, arguments)
+  if (this.autostart) {
+    this.start()
+  }
+  return methodResult
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+
+q.unshift(function(cb) {
+  results.push(&#x27;one&#x27;);
+  cb();
+});
+
+q.<span class="apidocCodeKeywordSpan">splice</span>(2, 0, function(cb) {
+  results.push(&#x27;three&#x27;);
+  cb();
+});
+
+// use the timeout feature to deal with jobs that
+// take too long or forget to execute a callback
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.start" id="apidoc.element.queue.index.prototype.start">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>start
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (cb) {
+  if (cb) {
+    callOnErrorOrEnd.call(this, cb)
+  }
+
+  this.running = true
+
+  if (this.pending === this.concurrency) {
+    return
+  }
+
+  if (this.jobs.length === 0) {
+    if (this.pending === 0) {
+      done.call(this)
+    }
+    return
+  }
+
+  var self = this
+  var job = this.jobs.shift()
+  var once = true
+  var session = this.session
+  var timeoutId = null
+  var didTimeout = false
+
+  function next (err, result) {
+    if (once &#x26;&#x26; self.session === session) {
+      once = false
+      self.pending--
+      if (timeoutId !== null) {
+        delete self.timers[timeoutId]
+        clearTimeout(timeoutId)
+      }
+
+      if (err) {
+        self.emit(&#x27;error&#x27;, err, job)
+      } else if (didTimeout === false) {
+        self.emit(&#x27;success&#x27;, result, job)
+      }
+
+      if (self.session === session) {
+        if (self.pending === 0 &#x26;&#x26; self.jobs.length === 0) {
+          done.call(self)
+        } else if (self.running) {
+          self.start()
+        }
+      }
+    }
+  }
+
+  if (this.timeout) {
+    timeoutId = setTimeout(function () {
+      didTimeout = true
+      if (self.listeners(&#x27;timeout&#x27;).length &#x3e; 0) {
+        self.emit(&#x27;timeout&#x27;, next, job)
+      } else {
+        next()
+      }
+    }, this.timeout)
+    this.timers[timeoutId] = timeoutId
+  }
+
+  this.pending++
+  job(next)
+
+  if (this.jobs.length &#x3e; 0) {
+    this.start()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x27;splice&#x27;
+]
+
+arrayAddMethods.forEach(function (method) {
+Queue.prototype[method] = function () {
+  var methodResult = Array.prototype[method].apply(this.jobs, arguments)
+  if (this.autostart) {
+    this.<span class="apidocCodeKeywordSpan">start</span>()
+  }
+  return methodResult
+}
+})
+
+Object.defineProperty(Queue.prototype, &#x27;length&#x27;, { get: function () {
+return this.pending + this.jobs.length
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.stop" id="apidoc.element.queue.index.prototype.stop">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  this.running = false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `q.timeout`
+* `q.autostart`
+
+## Instance methods
+#### `q.start([cb])`
+cb, if passed, will be called when the queue empties or when an error occurs.
+
+#### `q.<span class="apidocCodeKeywordSpan">stop</span>()`
+Stops the queue. can be resumed with `q.start()`.
+
+#### `q.end([err])`
+Stop and empty the queue immediately.
+
+## Instance methods mixed in from `Array`
+Mozilla has docs on how these methods work [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+/Array). Note that `slice` does not copy the queue.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.queue.index.prototype.unshift" id="apidoc.element.queue.index.prototype.unshift">
+        function <span class="apidocSignatureSpan">queue.index.prototype.</span>unshift
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unshift = function () {
+  var methodResult = Array.prototype[method].apply(this.jobs, arguments)
+  if (this.autostart) {
+    this.start()
+  }
+  return methodResult
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+function(cb) {
+  results.push(&#x27;five&#x27;);
+  cb();
+}
+);
+
+q.<span class="apidocCodeKeywordSpan">unshift</span>(function(cb) {
+results.push(&#x27;one&#x27;);
+cb();
+});
+
+q.splice(2, 0, function(cb) {
+results.push(&#x27;three&#x27;);
+cb();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
